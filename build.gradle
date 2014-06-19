@@ -14,7 +14,8 @@ asciidoctor {
     options = [
         eruby: 'erubis',
         attributes: [            
-            docinfo1: ''
+            docinfo1: '',
+            'source-highlighter':'coderay'
         ]
     ]
 }

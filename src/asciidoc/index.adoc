@@ -1,13 +1,30 @@
-= Guide
+= Type checking assignments
 
-.Sample
-----
-* a
-* b
-----
+An object o of type A can be assigned to a variable of type T if and only if:
+
+* `T` equals `A`
+
++
 
 [.result]
 ====
-* a
-* b
+[source,groovy]
+----
+Date now = new Date()
+----
+====
+
+* or `T` is one of `String`, `boolean`, `Boolean` or `Class`
+
++
+
+[.result]
+====
+[source,groovy]
+----
+String s = new Date() // implicit call to toString
+Boolean boxed = 'some string'       // Groovy truth
+boolean prim = 'some string'        // Groovy truth
+Class clazz = 'java.lang.String'    // class coercion
+----
 ====
