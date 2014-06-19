@@ -1,0 +1,20 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:0.7.1'
+    }
+}
+
+apply plugin: 'org.asciidoctor.gradle.asciidoctor'
+
+asciidoctor { 
+    options = [
+        eruby: 'erubis',
+        attributes: [            
+            docinfo1: ''
+        ]
+    ]
+}
